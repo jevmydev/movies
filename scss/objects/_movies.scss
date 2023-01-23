@@ -3,6 +3,7 @@
 @use "../components/genres";
 @use "../components/title";
 @use "../components/button";
+@use "../components/blur";
 
 .movies {
     &__inner {
@@ -12,6 +13,15 @@
     &__group {
         @include tools.flex($justify: flex-start, $align: flex-start, $direction: column, $gap: var.$space-small);
         margin-top: var.$space-long;
+    }
+
+    &__blur {
+        @extend %blur;
+    }
+
+    &__button {
+        margin: var.$space-long 0;
+        @extend %button;
     }
 }
 
@@ -92,13 +102,11 @@
     }
 
     &__average {
-        display: flex;
-        gap: 0.2rem;
+        @include tools.flex($gap: var.$space-x-small);
     }
 
     &__genres {
         @extend %genres;
-        width: var.$mw-text;
     }
 }
 

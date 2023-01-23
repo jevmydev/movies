@@ -25,7 +25,7 @@
         top: 0;
         z-index: -1;
         user-select: none;
-        transform: scale(1.4);
+        transform: scale(2);
     }
 
     &__inner {
@@ -38,20 +38,18 @@
         @include tools.flex($align: flex-start, $justify: flex-start, $gap: var.$space-long, $direction: column);
 
         &--inline {
-            @include tools.flex($gap: var.$space-long, $direction: row);
+            @include tools.flex($gap: var.$space-small, $direction: row);
         }
 
         &--genres {
             position: absolute;
             overflow: hidden;
-            max-width: var.$mw-text;
             bottom: var.$space-small;
         }
     }
 
     &__avg, &__count {
-        display: flex;
-        gap: 0.2rem;
+        @include tools.flex($gap: var.$space-x-small);
     }
 
     &__name {

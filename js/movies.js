@@ -2,41 +2,47 @@ import { getMovies, getGenres, titlesGroup } from "./assets/apiTools.js";
 import { $ } from "./assets/selectors.js";
 
 const maxPages = 4;
-
 let page = 1;
+
 export let movies = await getMovies("popular", page, "es");
 
 const $moviesInner = $(".movies__inner");
 
 async function showMovie() {
+    const fragmentGroup = document.createDocumentFragment();
+
     for(page; page <= maxPages; page++) {
         if(page > 1) movies = await getMovies("popular", page, "es");
-
-        const fragment = document.createDocumentFragment();
+        const fragmentMovies = document.createDocumentFragment();
 
         movies.results.forEach(({ title, poster_path, vote_average, genre_ids }) => {
             const genre = getGenres(genre_ids);
     
             const movieArticle = buildMovie({ title, poster_path, vote_average, genre });
-            fragment.appendChild(movieArticle);
+            fragmentMovies.appendChild(movieArticle);
         });
     
-        const titleGroup = titlesGroup[page - 1];
-        const moviesGroup = buildGroup(titleGroup, fragment);
+        const groupTitle = titlesGroup[page - 1];
+        const moviesGroup = buildGroup(groupTitle, fragmentMovies);
     
-        $moviesInner.appendChild(moviesGroup);
+        fragmentGroup.appendChild(moviesGroup);
     }
+
+    return $moviesInner.appendChild(fragmentGroup);
 }
 
-function buildGroup(titleGroup, movies) {
+function buildGroup(groupTitle, movies) {
     const moviesGroup = document.createElement("div");
     const moviesCollection = document.createElement("div");
+    const title = document.createElement("h2");
 
     moviesGroup.classList.add("movies__group");
     moviesCollection.classList.add("movies__collection", "collection");
+    title.classList.add("movies__title");
+    title.textContent = groupTitle;
 
-    moviesGroup.innerHTML = `<h2 class="movies__title">${titleGroup}</h2>`;
     moviesCollection.appendChild(movies);
+    moviesGroup.appendChild(title);
     moviesGroup.appendChild(moviesCollection);
 
     return moviesGroup;

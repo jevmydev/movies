@@ -2,6 +2,7 @@
 
 %genres {
     color: var.$color-secondary;
+    width: var.$mw-text;
     animation: marquee 10s linear infinite;
 
     @keyframes marquee {

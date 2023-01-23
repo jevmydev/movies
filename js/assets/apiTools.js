@@ -11,7 +11,7 @@ export async function getMovies(path, page, language) {
 
 export async function getVideoMovie(path, page, language) {
     const videos = await getMovies(path, page, language);
-    return videos.results.find(({ site }) => site === "YouTube");
+    return videos.results.find(({ site }) => site === "YouTube") || { key: "NakTu_VZxJ0" };
 }
 
 export function getGenres(genre_ids) {

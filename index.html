@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies | Las películas a tu alcance</title>
+    <title>Movies | Las tendencias de películas a tu alcance</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="manifest" href="/manifest.json">
-    <link rel="canonical" href="https://movies.netlify.app/">
+    <link rel="canonical" href="https://studiomovies.netlify.app/">
     <script src="/js/movies.js" type="module"></script>
     <script src="/js/heroMovie.js" type="module"></script>
     <script src="/js/scrolling.js" type="module"></script>
-    <meta name="application-name" content="Disfruta e infórmate sobre películas en Movies de manera gratuita y fácil.">
+    <meta name="application-name" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies.">
     <meta name="theme-color" content="#fafafa">
     <meta name="author" content="Jeremy Díaz">
-    <meta name="description" content="Disfruta e infórmate sobre películas en Movies de manera gratuita y fácil.">
+    <meta name="description" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies.">
     <meta property="og:locale" content="es_ES">
     <meta property="og:title" content="Movies | Las películas a tu alcance">
     <meta property="og:image" content="/favicon.ico">
-    <meta property="og:description" content="Disfruta e infórmate sobre películas en Movies de manera gratuita y fácil.">
-    <meta property="og:url" content="https://movies.netlify.app/">
-    <meta property="og:site_name" content="movies.netlify.app">
+    <meta property="og:description" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies.">
+    <meta property="og:url" content="https://studiomovies.netlify.app"/>
+    <meta property="og:site_name" content="studiomovies.netlify.app">
     <meta property="og:type" content="website">
 </head>
 <body>
@@ -28,12 +28,14 @@
         <div class="header__inner">
             <nav class="header__nav nav">
                 <div class="nav__first">
-                    <a class="nav__movies" title="Logo de Movies" href="/">
-                        <figure class="nav__figure">
-                            <img class="nav__logo" alt="Logo de Movies" src="/images/logo.webp" decoding="async">
-                        </figure>
-                    </a>
                     <ul class="nav__ul">
+                        <li>
+                            <a class="nav__movies" title="Logo de Movies" href="/">
+                                <figure class="nav__figure">
+                                    <img class="nav__logo" alt="Logo de Movies" src="/images/logo.webp" decoding="async">
+                                </figure>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav__link nav__link--active" title="Inicio" href="#">Inicio</a>
                         </li>
@@ -75,7 +77,7 @@
             <div class="hero__inner">
                 <div class="hero__group">
                     <h1 class="hero__name">Movies</h1>
-                    <h2 class="hero__title">Películas a tu alcance</h2>
+                    <h2 class="hero__title">Las tendencias de películas a tu alcance</h2>
                     <div class="hero__group hero__group--inline">
                         <button class="hero__button" title="Más información">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
@@ -84,36 +86,47 @@
                             </svg>
                             Más información
                         </button>
+                        <button class="hero__button hero__button--sound" title="Desmutea el video">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+                                <path d="M10.025 8a4.486 4.486 0 0 1-1.318 3.182L8 10.475A3.489 3.489 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.486 4.486 0 0 1 10.025 8zM7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12V4zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="hero__group hero__group--inline">
                         <p class="hero__avg">
                             <svg width="16" height="16" fill="#f50915" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                             </svg>
                             <span class="hero__average">0</span>
                         </p>
+                        <p class="hero__count">
+                            <svg width="16" height="16" fill="#f50915" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                            </svg>
+                            <span class="hero__vote">0</span>
+                        </p>
                     </div>
-                </div>
-                <div class="hero__group hero__group--inline">
-                    <p class="hero__count">
-                        <svg width="16" height="16" fill="#f50915" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-                        </svg>
-                        <span class="hero__vote">0</span>
-                    </p>
-                    <button class="hero__button hero__button--sound" title="Desmutea el video">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
-                            <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
-                            <path d="M10.025 8a4.486 4.486 0 0 1-1.318 3.182L8 10.475A3.489 3.489 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.486 4.486 0 0 1 10.025 8zM7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12V4zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11z"/>
-                        </svg>
-                    </button>
-                </div>
+                </div> 
                 <div class="hero__group hero__group--inline hero__group--genres">   
                     <p class="hero__genres"></p>
                 </div>
             </div>
         </section>
         <section class="main__movies movies">
+            <div class="movies__blur"></div>
             <div class="movies__inner"></div>
+            <div class="movies__inner">
+                <button class="movies__button">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                    </svg>
+                    Ver más
+                </button>
+            </div>
+            <div class="movies__blur"></div>
         </section>
     </main>
 
@@ -163,7 +176,7 @@
                          </a>
                      </li>
                 </ul>
-             </div>
+            </div>
         </div>
         <div class="footer__inner footer__inner--bottom">
             <a class="footer__link" title="Ir a mi Portfolio" href="https://jeremydiaz.netlify.app/" target="_blank" rel="noreferrer noopener">
