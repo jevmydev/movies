@@ -1,3 +1,35 @@
+@use "../tools/tools";
+@use "../settings/var";
+@use "../components/anchor";
+
 .footer {
-    background-color: red;
+    background-color: var.$bg-tertiary;
+    margin-top: var.$space-long;
+
+    &__inner {
+        @include tools.center();
+        @include tools.flex($justify: space-between);
+        padding: var.$space-long var.$space-small;
+
+        &--bottom {
+            border-top: var.$border-primary var.$color-primary;
+        }
+    }
+
+    &__ul {
+        list-style: none;
+        @include tools.flex($direction: column, $gap: var.$space-small, $align: flex-start);
+    }
+
+    &__logo {
+        max-width: 5rem
+    }
+
+    &__link {
+        @extend %anchor;
+
+        &--active {
+            @extend %anchor--active;
+        }
+    }
 }
