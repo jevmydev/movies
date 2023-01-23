@@ -1,0 +1,18 @@
+{
+    "name": "Movies | Las películas a tu alcance",
+    "short_name": "Movies",
+    "description": "Disfruta e infórmate sobre películas en Movies de manera gratuita y fácil.",
+    "keywords": ["Movies", "Películas", "Reviews", "Gratuito y fácil"],
+    "author": "Jeremy Díaz",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Jeremy664K/movies.git"
+    },
+    "bugs": {
+      "url": "https://github.com/Jeremy664K/movies/issues"
+    },
+    "theme_color": "#fafafa",
+    "background_color": "#0a0a0a",
+    "start_url": "/index.html",
+    "homepage": "https://movies.netlify.app/"
+  }

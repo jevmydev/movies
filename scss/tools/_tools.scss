@@ -1,0 +1,16 @@
+@use "../settings/var";
+
+@mixin flex($align: center, $justify: center, $gap: 0, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin center() {
+    padding: 0 var.$space-small;
+    max-width: var.$mw-document;
+    width: 100%;
+    margin: 0 auto;
+}

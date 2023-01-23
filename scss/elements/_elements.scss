@@ -1,0 +1,28 @@
+@use "../settings/var";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var.$bg-primary;
+    color: var.$color-primary;
+    font-family: var.$font-primary;
+    font-size: var.$size-primary;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+}
+
+body::-webkit-scrollbar {
+    width: var.$space-x-small;
+    height: auto;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var.$color-secondary;
+    border-radius: var.$radius-primary;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var.$color-primary;
+}

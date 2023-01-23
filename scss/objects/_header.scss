@@ -1,0 +1,57 @@
+@use "../settings/var";
+@use "../tools/tools";
+@use "../components/anchor";
+@use "../components/input";
+
+.header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    transition: box-shadow 0.12s;
+    box-shadow: inset 0 6rem 2rem -2rem var.$bg-primary-opacity;
+
+    &--scroll {
+        box-shadow: inset 0 6rem 0 0 var.$bg-primary;
+    }
+
+    &__inner {
+        @include tools.center();
+    }
+}
+
+.nav {
+    padding: var.$space-small 0;
+    @include tools.flex($justify: space-between, $gap: var.$space-x-small);
+
+    &__logo {
+        max-width: 5rem;
+    }
+
+    &__first, &__ul {
+        @include tools.flex($justify: space-between, $gap: var.$space-x-small);
+        list-style: none;
+    }
+
+    &__link {
+        @extend %anchor;
+    }
+
+    &__link--active {
+        @extend %anchor--active;
+    }
+
+    &__group {
+        @include tools.flex();
+        position: relative;
+    }
+
+    &__icon {
+        @include tools.flex();
+        position: absolute;
+        left: 0.8rem;
+    }
+
+    &__search {
+        @extend %input;
+    }
+}

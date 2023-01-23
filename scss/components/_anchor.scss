@@ -1,0 +1,25 @@
+@use "../settings/var";
+
+%anchor {
+    border: 0;
+    border-radius: var.$radius-primary;
+    padding: var.$space-x-small;
+    color: var.$color-secondary;
+    transition: color 0.12s;
+    text-decoration: none;
+
+    &--active {
+        cursor: default;
+        font-weight: 700;
+        color: var.$color-primary;
+        border: 1px solid transparent;
+    }
+}
+
+%anchor:hover {
+    color: var.$color-tertiary;
+}
+
+%anchor--active:hover {
+    color: var.$color-primary;
+}

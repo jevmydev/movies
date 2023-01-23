@@ -1,0 +1,8 @@
+@use "../settings/var";
+
+%title {
+    font-family: var.$font-title;
+    font-size: var.$size-title;
+    max-width: var.$mw-text;
+    line-height: 1.2;
+}

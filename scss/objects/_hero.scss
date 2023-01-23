@@ -1,0 +1,76 @@
+@use "../settings/var";
+@use "../tools/tools";
+@use "../components/button";
+@use "../components/title";
+@use "../components/genres";
+
+.hero {
+    @include tools.flex($justify: flex-start, $gap: var.$space-x-small);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: linear-gradient(to top, var.$bg-primary-opacity, transparent);
+    }
+
+    &__video {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        user-select: none;
+        transform: scale(1.4);
+    }
+
+    &__inner {
+        @include tools.flex($align: flex-end, $justify: space-between, $gap: var.$space-x-small);
+        @include tools.center();
+        z-index: 1;
+    }
+
+    &__group {
+        @include tools.flex($align: flex-start, $justify: flex-start, $gap: var.$space-long, $direction: column);
+
+        &--inline {
+            @include tools.flex($gap: var.$space-long, $direction: row);
+        }
+
+        &--genres {
+            position: absolute;
+            overflow: hidden;
+            max-width: var.$mw-text;
+            bottom: var.$space-small;
+        }
+    }
+
+    &__avg, &__count {
+        display: flex;
+        gap: 0.2rem;
+    }
+
+    &__name {
+        color: var.$bg-secondary;
+    }
+
+    &__title {
+        @extend %title;
+    }
+
+    &__button {
+        @extend %button;
+    }
+
+    &__button--sound {
+        @extend %button--secondary;
+    }
+
+    &__genres {
+        @extend %genres;
+    }
+}

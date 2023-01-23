@@ -1,0 +1,22 @@
+@use "../settings/var";
+
+%input {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    transition: border-color 0.12s;
+    font-family: var.$font-primary;
+    font-size: var.$size-primary;
+    border: var.$border-primary var.$color-secondary;
+    color: var.$color-primary;
+    padding: var.$space-x-small var.$space-long;
+    border-radius: var.$radius-primary;
+}
+
+%input::placeholder {
+    color: var.$color-secondary;
+}
+
+%input:focus {
+    border-color: var.$color-tertiary;
+}

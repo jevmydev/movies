@@ -1,0 +1,28 @@
+@use "../components/anchor";
+@use "../settings/var";
+@use "../tools/tools";
+
+%button {
+    @include tools.flex($gap: var.$space-x-small);
+    cursor: pointer;
+    transition: background-color 0.12s, color 0.12s;
+    font-weight: 700;
+    font-size: var.$size-primary;
+    border: var.$border-primary var.$color-primary;
+    border-radius: var.$radius-primary;
+    padding: var.$space-x-small var.$space-small;
+    background-color: var.$color-primary;
+    color: var.$bg-primary;
+
+    &--secondary {
+        border-color: transparent;
+        background-color: var.$bg-primary-opacity;
+        color: var.$color-primary;
+    }
+}
+
+%button:hover {
+    background-color: transparent;
+    color: var.$color-primary;
+    border-color: var.$color-primary;
+}
