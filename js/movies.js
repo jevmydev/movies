@@ -2,7 +2,7 @@ import { getMovies, getGenres, titlesGroup } from "./assets/apiTools.js";
 import { $ } from "./assets/selectors.js";
 
 const maxPages = 4;
-let page = 1;
+let page = 1; 
 
 export let movies = await getMovies("popular", page, "es");
 

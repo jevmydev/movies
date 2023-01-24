@@ -62,6 +62,7 @@
 
     &__button {
         @extend %button;
+        white-space: nowrap;
     }
 
     &__button--sound {
@@ -70,5 +71,21 @@
 
     &__genres {
         @extend %genres;
+    }
+
+    @media only screen and (max-width: 800px) {
+        &__video {
+            transform: scale(3);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        &__video {
+            transform: scale(5.7);
+        }
+
+        &__title {
+            font-size: var.$size-subtitle + 0.5rem;
+        }
     }
 }

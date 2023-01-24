@@ -2,16 +2,17 @@
 @use "../tools/tools";
 @use "../components/anchor";
 @use "../components/input";
+@use "../components/button";
 
 .header {
     position: fixed;
-    z-index: 10;
+    z-index: 2;
     width: 100%;
     transition: box-shadow 0.12s;
     box-shadow: inset 0 6rem 2rem -2rem var.$bg-primary-opacity;
 
     &--scroll {
-        box-shadow: inset 0 6rem 0 0 var.$bg-primary;
+        box-shadow: inset 0 6rem 0 0 var.$bg-tertiary;
     }
 
     &__inner {
@@ -25,9 +26,11 @@
 
     &__logo {
         max-width: 5rem;
+        position: relative;
+        z-index: 3;
     }
 
-    &__first, &__ul {
+    &__first, &__ul, &__third {
         @include tools.flex($justify: space-between, $gap: var.$space-x-small);
         list-style: none;
     }
@@ -54,4 +57,74 @@
     &__search {
         @extend %input;
     }
+
+    &__button {
+        @extend %button;
+
+        &--search, &--menu {
+            display: none;
+            z-index: 3;
+        }
+
+        &--search {
+            @extend %button--secondary;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        &__icon, &__search  {
+            display: none;
+        }
+
+        &__button--search {
+            display: flex;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        &__ul {
+            @include tools.flex($direction: column, $align: flex-start, $gap: var.$space-long);
+            background-color: var.$bg-tertiary;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: -200vh;
+            left: 0;
+            padding: var.$space-small;
+        }
+
+        &__ul--visible {
+            top: 0;
+        }
+
+        &__li, &__link {
+            display: block;
+            width: 100%;
+        }
+
+        &__link {
+            border-radius: 0;
+            border-bottom: var.$border-primary var.$bg-secondary;
+        }
+
+        &__button--menu {
+            display: flex;
+        }
+
+        &__rect {
+            transition: transform 0.12s;
+        }
+    
+        &__rect--topchange {
+            transform: translate(15px, -10px) rotate(45deg);    
+        }
+    
+        &__rect--bottomchange {
+            transform: translate(-15px, 30px) rotate(-45deg);
+        }
+    }
+}
+
+.body--event {
+    overflow: hidden;
 }
