@@ -96,7 +96,7 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.12s, color 0.12s;
+  transition: background-color 0.12s, color 0.12s, border-color 0.12s;
   font-weight: 700;
   font-size: 1rem;
   border: 0.125rem solid #fafafa;
@@ -199,9 +199,6 @@ body::-webkit-scrollbar-thumb:hover {
     left: 0;
     padding: 1rem;
   }
-  .nav__ul--visible {
-    top: 0;
-  }
   .nav__li, .nav__link {
     display: block;
     width: 100%;
@@ -222,10 +219,6 @@ body::-webkit-scrollbar-thumb:hover {
   .nav__rect--bottomchange {
     transform: translate(-15px, 30px) rotate(-45deg);
   }
-}
-
-.body--event {
-  overflow: hidden;
 }
 
 .movie__title, .hero__title {
@@ -407,6 +400,7 @@ body::-webkit-scrollbar-thumb:hover {
   user-select: none;
   width: 100%;
   height: auto;
+  min-height: 18.75rem;
 }
 .movie__header, .movie__footer {
   padding: 0.5rem;
@@ -474,6 +468,26 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .footer__logo {
   max-width: 5rem;
+}
+.body--event {
+  overflow: hidden;
+}
+
+.nav__ul--visible {
+  top: 0;
+}
+
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: auto;
+  }
+  .header, .nav__link, .nav__search, .nav__button, .nav__rect, .hero__button, .movie__inner, .movies__button, .footer__link {
+    transition: none;
+    animation: none;
+  }
+  .hero__genres, .movie__genres {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

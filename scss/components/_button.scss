@@ -5,7 +5,7 @@
 %button {
     @include tools.flex($gap: var.$space-x-small);
     cursor: pointer;
-    transition: background-color 0.12s, color 0.12s;
+    transition: background-color 0.12s, color 0.12s, border-color 0.12s;
     font-weight: 700;
     font-size: var.$size-primary;
     border: var.$border-primary var.$color-primary;

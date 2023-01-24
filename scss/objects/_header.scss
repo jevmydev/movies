@@ -93,10 +93,6 @@
             padding: var.$space-small;
         }
 
-        &__ul--visible {
-            top: 0;
-        }
-
         &__li, &__link {
             display: block;
             width: 100%;
@@ -123,8 +119,4 @@
             transform: translate(-15px, 30px) rotate(-45deg);
         }
     }
-}
-
-.body--event {
-    overflow: hidden;
 }

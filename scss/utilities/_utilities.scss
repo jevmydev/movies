@@ -1,0 +1,22 @@
+.body--event {
+    overflow: hidden;
+}
+
+.nav__ul--visible {
+    top: 0;
+}
+
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .header, .nav__link, .nav__search, .nav__button, .nav__rect, .hero__button, .movie__inner, .movies__button, .footer__link {
+        transition: none;
+        animation: none;
+    }
+    
+    .hero__genres, .movie__genres {
+        display: none;
+    }   
+}
