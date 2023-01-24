@@ -25,14 +25,13 @@ export function getGenres(genre_ids) {
             ${genreAction} 
             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" viewBox="0 0 16 16">
                 <circle cx="8" cy="8" r="4"/>
-            </svg>
-        `;
+            </svg>`;
     });
 
     return genre;
 }
 
-export const titlesGroup = ["Populares en Movies", "Tendencias", "Películas emocionantes", "Agregados", "Mi lista"]; 
+export const titlesGroup = ["Populares en Movies", "Tendencias", "Películas emocionantes", "Agregados", "Recientes", "Aclamados", "Lanzamientos"]; 
 
 export const genres = {
     28: "Action",

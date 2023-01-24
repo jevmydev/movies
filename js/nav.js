@@ -9,7 +9,7 @@ function toggleMenu() {
     $menu.classList.toggle("nav__ul--visible");
     $body.classList.toggle("body--event");
 
-    if($menu.classList.contains("menuOpen")) $menuBtn.title = "Cerrar el menú";
+    if($menu.classList.contains("nav__ul--visible")) $menuBtn.title = "Cerrar el menú";
     else $menuBtn.title = "Abrir el menú";
 
     $menuRectTop.classList.toggle("nav__rect--topchange");
