@@ -1,4 +1,4 @@
-import { $, $$, $body } from "./assets/selectors.js";
+import { $, $body } from "./assets/selectors.js";
 
 const $menu = $(".nav__ul");
 const $menuBtn = $(".nav__button--menu");

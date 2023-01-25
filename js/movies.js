@@ -1,5 +1,6 @@
 import { getMovies, getGenres, titlesGroup } from "./assets/apiTools.js";
-import { buildGroup, buildMovie } from "./assets/builds.js";
+import { buildGroup, buildMovie, refreshListeners } from "./assets/builds.js";
+import { showData } from "./dataMovie.js";
 import { $ } from "./assets/selectors.js";
 
 let maxPages = 5;
@@ -17,10 +18,10 @@ async function showMovies() {
         if(page > 1) movies = await getMovies("popular", page, "es");
         const fragmentMovies = document.createDocumentFragment();
 
-        movies.results.forEach(({ title, poster_path, vote_average, genre_ids }) => {
+        movies.results.forEach(({ title, poster_path, vote_average, genre_ids, id }) => {
             const genre = getGenres(genre_ids);
     
-            const movieArticle = buildMovie({ title, poster_path, vote_average, genre });
+            const movieArticle = buildMovie({ title, poster_path, vote_average, genre, id });
             fragmentMovies.appendChild(movieArticle);
         });
         
@@ -31,7 +32,8 @@ async function showMovies() {
         fragmentGroup.appendChild(moviesGroup);
     }
 
-    $moviesInner.appendChild(fragmentGroup);
+    await $moviesInner.appendChild(fragmentGroup);
+    refreshListeners(showData);
 }
 
 async function seeMore() {

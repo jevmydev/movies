@@ -11,7 +11,19 @@ export async function getMovies(path, page, language) {
 
 export async function getVideoMovie(path, page, language) {
     const videos = await getMovies(path, page, language);
-    return videos.results.find(({ site }) => site === "YouTube") || { key: "NakTu_VZxJ0" };
+    const { results } = videos;
+    const filterVideos = results.filter(({ site }) => site === "YouTube") 
+
+    if(filterVideos.length === 0) {
+        const videosEnglish = await getMovies(path, page, "en");
+        const resultsEnglish = videosEnglish.results;
+        const filterVideosEnglish = resultsEnglish.filter(({ site }) => site === "YouTube") 
+
+        if(filterVideosEnglish.length === 0) return [{ key: "NakTu_VZxJ0" }];
+        else return filterVideosEnglish;
+    }
+
+    return filterVideos;
 }
 
 export function getGenres(genre_ids) {

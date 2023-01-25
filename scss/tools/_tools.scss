@@ -8,9 +8,9 @@
     gap: $gap;
 }
 
-@mixin center() {
+@mixin center($mw: var.$mw-document) {
     padding: 0 var.$space-small;
-    max-width: var.$mw-document;
+    max-width: $mw;
     width: 100%;
     margin: 0 auto;
 }
