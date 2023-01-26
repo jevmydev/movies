@@ -1,6 +1,7 @@
 import { $, $body } from "./assets/selectors.js";
-import { getMovies, getVideoMovie } from "./assets/apiTools.js";
+import { getMovies, getVideoMovie, saveMovie, getSaveMovie } from "./assets/apiTools.js";
 import { buildIframeMovie } from "./assets/builds.js";
+import { addList } from "./assets/addList.js";
 
 const $dataMovie = $(".datamovie");
 const $datamovieVideos = $(".datamovie__videos");
@@ -11,17 +12,25 @@ const $poster = $(".datamovie__poster");
 const $description = $(".datamovie__description");
 const $data = $(".datamovie__data");
 
+const $listBtn = $(".datamovie__button--list");
 const $closeBtn = $(".datamovie__button--close");
-let muteSound = true;
 
-async function searchData(dataID, isSoundMute) {
-    const movie = await getMovies(`/${dataID}`, 1, "es");
+const maxVideos = 2;
+
+let isSoundMute = true;
+
+async function searchData(dataID) {
+    const saveMovieFile = getSaveMovie(dataID);
+    
+    const movie = saveMovieFile.data || await getMovies(`/${dataID}`, 1, "es");
     const fragmentVideos = document.createDocumentFragment();
 
-    const videos = await getVideoMovie(`/${dataID}/videos`, 1, "es");
+    const videos = saveMovieFile.videos || await getVideoMovie(`/${dataID}/videos`, 1, "es");
+    saveMovie(dataID, undefined, videos);
+
     const videoKey = videos[0].key;
-    const srcVideo = `https://www.youtube-nocookie.com/embed/${videoKey}?controls=0&mute=${isSoundMute ? 1: 0}&autoplay=1&loop=1&playlist=${videoKey}`
-    const { title, poster_path, vote_average, genres, vote_count, revenue, release_data, budget, overview } = movie;
+    const srcVideo = `https://www.youtube-nocookie.com/embed/${videoKey}?controls=0&vq=auto&mute=${isSoundMute ? 1: 0}&autoplay=1&loop=1&playlist=${videoKey}`
+    const { title, poster_path, vote_average, genre, vote_count, overview } = movie;
 
     $title.textContent = title;
     $description.textContent = overview;
@@ -30,26 +39,26 @@ async function searchData(dataID, isSoundMute) {
     $data.innerHTML = `
         <span class="datamovie__info">Promedio: ${vote_average}</span>
         <span class="datamovie__info">Votos: ${vote_count}</span>
-        <span class="datamovie__info">Lanzamiento: ${release_data}</span>
-        <span class="datamovie__info">Ingresos: $${revenue}</span>
-        <span class="datamovie__info">Presupuesto: $${budget}</span>
-        <span class="datamovie__info">Géneros: ${genres.map(genre => ` ${genre.name}`)}</span>
+        <span class="datamovie__info">Géneros: ${genre}</span>
     `
 
-    videos.forEach(({ key }) => {
-        const srcVideo = `https://www.youtube-nocookie.com/embed/${key}?controls=1&mute=0&autoplay=0`
-        const iframe = buildIframeMovie(srcVideo)
+    videos.forEach(({ key }, index) => {
+        if(index >= maxVideos) return "";
+
+        const srcVideo = `https://www.youtube-nocookie.com/embed/${key}?controls=1&mute=0&vq=auto&autoplay=0`;
+        const iframe = buildIframeMovie(srcVideo);
 
         fragmentVideos.appendChild(iframe);
     });
     
-    $datamovieVideos.innerHTML = "";
+    $listBtn.setAttribute("data-id", dataID);
+    $listBtn.addEventListener("click", addList);
     $datamovieVideos.appendChild(fragmentVideos);
 }
 
 export function showData({ currentTarget }) {
     const dataID = currentTarget.getAttribute("data-id");
-    searchData(dataID, muteSound);
+    searchData(dataID);
 
     $body.classList.add("body--event");
     $dataMovie.classList.add("datamovie--visible");
@@ -58,6 +67,8 @@ export function showData({ currentTarget }) {
 function hideData() {
     $body.classList.remove("body--event");
     $dataMovie.classList.remove("datamovie--visible");
+    $datamovieVideos.innerHTML = "";
 }
 
+$(".datamovie__out").addEventListener("click", hideData);
 $closeBtn.addEventListener("click", hideData);
