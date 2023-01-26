@@ -8,6 +8,14 @@
 .movies {
     &__inner {
         @include tools.center();
+
+        &--page {
+            padding-top: var.$space-long + 5rem;
+        }
+
+        &--more {
+            @include tools.flex($justify: flex-start, $gap: var.$space-small);
+        }
     }
 
     &__group {
@@ -22,6 +30,11 @@
     &__button {
         margin: var.$space-long 0;
         @extend %button;
+
+        &--seelist {
+            @extend %button--secondary;
+            text-decoration: none;
+        }
     }
 }
 
@@ -51,7 +64,7 @@
     cursor: default;
     position: relative;
     overflow: hidden;
-    min-width: 12.5rem;
+    min-width: var.$mw-movie;
     height: 100%;
     border-radius: var.$radius-primary;
 
@@ -69,7 +82,7 @@
         object-fit: cover;
         user-select: none;
         width: 100%;
-        height: auto;
+        min-width: var.$mw-movie;
         min-height: var.$mh-element;
     }
 

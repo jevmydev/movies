@@ -1,23 +1,28 @@
 @font-face {
-  font-family: "Roboto";
-  src: url("../../fonts/Roboto-Regular.ttf") format("truetype");
-  font-weight: 400;
+    font-family: "Roboto";
+    src: url("../../fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../../fonts/Roboto-Bold.ttf") format("truetype");
-  font-weight: 700;
+    font-family: "Roboto";
+    src: url("../../fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "Oswald";
-  src: url("../../fonts/Oswald-Bold.ttf") format("truetype");
-  font-weight: 700;
+    font-family: "Oswald";
+    src: url("../../fonts/Oswald-Bold.ttf") format("truetype");
+    font-weight: 700;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: #fff;
+    background-color: #f5091580;
 }

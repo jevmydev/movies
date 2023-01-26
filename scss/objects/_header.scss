@@ -37,10 +37,10 @@
 
     &__link {
         @extend %anchor;
-    }
 
-    &__link--active {
-        @extend %anchor--active;
+        &--active {
+            @extend %anchor--active;
+        }
     }
 
     &__group {

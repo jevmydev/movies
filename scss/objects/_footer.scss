@@ -12,7 +12,7 @@
         padding: var.$space-long var.$space-small;
 
         &--bottom {
-            border-top: var.$border-primary var.$color-secondary;
+            border-top: var.$border-primary var.$bg-primary;
         }
     }
 
@@ -22,7 +22,7 @@
     }
 
     &__logo {
-        max-width: 5rem
+        max-width: 5rem;
     }
 
     &__link {
