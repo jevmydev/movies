@@ -1,0 +1,17 @@
+@use "../settings/var";
+
+.sign {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.12s;
+    opacity: 0;
+    letter-spacing: 0.125rem;
+    color: var.$color-primary;
+    background-color: var.$bg-secondary;
+
+    &--visible {
+        opacity: 1;
+    }
+}
