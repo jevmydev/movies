@@ -26,6 +26,8 @@
 </head>
 <body>
 
+    <div class="sign">Agregado a la lista</div>
+
     <header class="header">
         <div class="header__inner">
             <nav class="header__nav nav">
@@ -37,16 +39,13 @@
                     </a>
                     <ul class="nav__ul">
                         <li class="nav__li">
-                            <a class="nav__link nav__link--active" title="Inicio" href="#">Inicio</a>
+                            <a class="nav__link nav__link--active" title="Inicio" href="#top">Inicio</a>
                         </li>
                         <li class="nav__li">
-                            <a class="nav__link" title="Películas" href="#">Películas</a>
+                            <a class="nav__link" title="Películas" href="/pages/movies.html">Películas</a>
                         </li>
                         <li class="nav__li">
-                            <a class="nav__link" title="Tus favoritos" href="#">Novedades</a>
-                        </li>
-                        <li class="nav__li">
-                            <a class="nav__link" title="Tus favoritos" href="#">Mi lista</a>
+                            <a class="nav__link" title="Mi lista" href="/pages/list.html">Mi lista</a>
                         </li>
                     </ul>
                 </div>
@@ -128,7 +127,7 @@
             <div class="movies__inner">
                 <div class="movies__blur"></div>
             </div>
-            <div class="movies__inner">
+            <div class="movies__inner movies__inner--more">
                 <div class="movies__blur"></div>
                 <button class="movies__button movies__button--more">
                     <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
@@ -137,6 +136,12 @@
                     </svg>
                     Ver más
                 </button>
+                <a class="movies__button movies__button--seelist" title="Mi lista" href="/pages/list.html">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"/>
+                    </svg>
+                    Ver lista
+                </a>
             </div>
         </section>
         <section class="main__datamovie datamovie">
@@ -151,7 +156,7 @@
                             </button>
                         </div>
                         <div class="datamovie__close">
-                            <button class="datamovie__button datamovie__button--close">
+                            <button class="datamovie__button datamovie__button--close" title="Cerrar">
                                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                                 </svg>
@@ -177,6 +182,7 @@
                     </aside>
                 </div>
             </article>
+            <div class="datamovie__out"></div>
         </section>
     </main>
 
@@ -192,19 +198,13 @@
             <div class="footer__second">
                 <ul class="footer__ul">
                     <li>
-                        <a class="footer__link footer__link--active" title="Inicio" href="#">Inicio</a>
+                        <a class="footer__link footer__link--active" title="Inicio" href="#top">Inicio</a>
                     </li>
                     <li>
-                        <a class="footer__link" title="Películas" href="#">Películas</a>
+                        <a class="footer__link" title="Películas" href="/pages/movies.html">Películas</a>
                     </li>
                     <li>
-                        <a class="footer__link" title="Novedades" href="#">Series</a>
-                    </li>
-                    <li>
-                        <a class="footer__link" title="Tus favoritos" href="#">Novedades</a>
-                    </li>
-                    <li>
-                        <a class="footer__link" title="Tus favoritos" href="#">Mi lista</a>
+                        <a class="footer__link" title="Mi lista" href="/pages/list.html">Mi lista</a>
                     </li>
                 </ul>
             </div>
@@ -232,7 +232,7 @@
             <a class="footer__link" title="Ir a mi Portfolio" href="https://jeremydiaz.netlify.app/" target="_blank" rel="noreferrer noopener">
                 Creado por Jeremy Díaz
             </a>
-            <a class="footer__link" title="Ir al inicio" href="/#hero">
+            <a class="footer__link" title="Ir al inicio" href="#top">
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"></path>
                 </svg>
