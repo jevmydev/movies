@@ -19,24 +19,24 @@ Añade tus **películas favoritas** a tu lista y disfruta de las **nuevas tenden
 
 ## Películas
 
-Las tendencias en películas a tu alcance.
+Las **tendencias** en películas a tu **alcance**.
 
 ![Películas de Movies](./images/readme/movies.png)
 
 ## Modal de las películas
 
-Toda la información y videos oficiales de cada una de ellas.
+Toda la **información** y **videos oficiales** de cada una de ellas.
 
 ![Toda la información de películas en Movies](./images/readme/data.png)
 
 ## Búsqueda de películas
 
-Puedes buscar y tener sugerencias de la película que quieras.
+Puedes **buscar** y tener **sugerencias** de la película que quieras.
 
 ![Búsqueda de películas en Movies](./images/readme/search.png)
 
 ## Tu lista
 
-Tienes a disposición crear tu propia lista de películas para guardar.
+Tienes a disposición **crear** tu **propia lista** de películas para **guardar**.
 
 ![Lista de películas en Movies](./images/readme/list.png)
