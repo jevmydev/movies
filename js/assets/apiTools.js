@@ -28,8 +28,8 @@ export const genres = {
     37: "Western"
 };
 
-export async function getMovies(path, page, language) {
-    const search = `${URL}/${path}?api_key=${TOKEN}&page=${page}&language=${language}`;
+export async function getMovies(path, page, language, rute = "movie", additional = "") {
+    const search = `${URL}${rute}/${path}?api_key=${TOKEN}&page=${page}&language=${language}&${additional}`;
     
     const response = await fetch(search);
     const movies = await response.json(); 

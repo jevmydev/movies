@@ -46,6 +46,15 @@
     &__group {
         @include tools.flex();
         position: relative;
+
+        &--search {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var.$space-x-small;
+            margin-top: var.$space-x-small;
+            position: absolute;
+            width: 100%;
+        }
     }
 
     &__icon {
@@ -58,12 +67,27 @@
         @extend %input;
     }
 
+    &__form {
+        position: relative;
+    }
+
+    &__suggestion {
+        background-color: var.$bg-tertiary;
+        border-top: var.$border-primary var.$bg-secondary;
+        width: 100%;
+        padding: var.$space-x-small;
+    }
+
     &__button {
         @extend %button;
 
         &--search, &--menu {
             display: none;
             z-index: 3;
+        }
+
+        &--suggestion {
+            width: 100%;
         }
 
         &--search {
@@ -78,6 +102,12 @@
 
         &__button--search {
             display: flex;
+        }
+
+        &__group--search, &__search {
+            z-index: 3;
+            padding: var.$space-x-small;
+            background-color: var.$bg-primary;
         }
     }
 

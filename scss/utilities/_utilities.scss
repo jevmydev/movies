@@ -6,6 +6,10 @@
     top: 0;
 }
 
+.nav__search--visible {
+    display: block;
+}
+
 @media (prefers-reduced-motion) {
     html {
         scroll-behavior: auto;

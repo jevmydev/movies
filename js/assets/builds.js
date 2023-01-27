@@ -63,6 +63,16 @@ export function buildIframeMovie(srcVideo) {
     return iframeMovie;
 }
 
+export function buildSuggestion(title, callback) {
+    const suggestionBtn = document.createElement("button");
+    suggestionBtn.classList.add("nav__button", "nav__button--suggestion")
+    suggestionBtn.title = title;
+    suggestionBtn.textContent = title;
+
+    suggestionBtn.addEventListener("click", callback);
+    return suggestionBtn;
+}
+
 export function refreshListeners(callBackInformation, callbackList) {
     $$(".movie__button--information").forEach(informationMovie => informationMovie.addEventListener("click", callBackInformation));
     $$(".movie__button--list").forEach(informationMovie => informationMovie.addEventListener("click", callbackList));

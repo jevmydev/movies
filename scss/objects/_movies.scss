@@ -6,7 +6,7 @@
 @use "../components/blur";
 
 .movies {
-    &__inner {
+    &__inner, &__search {
         @include tools.center();
 
         &--page {
