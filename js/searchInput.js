@@ -26,6 +26,7 @@ async function handleSearch(e) {
     $searchGroup.innerHTML = "";
 
     await showSearchMovies();
+    toggleInput(e);
 
     const { top } = $moviesInner.getBoundingClientRect();
     const position = (top + window.scrollY) - 130;
@@ -43,12 +44,9 @@ async function handleKeyPress() {
 async function showSuggestions() {
     const fragmentSuggestion = document.createDocumentFragment();
 
-    movies.results.forEach(({ title, poster_path, vote_average, vote_count, genre_ids, overview, id }, index) => {
+    movies.results.forEach(({ title }, index) => {
         if(index >= maxSuggestion) return $searchGroup.innerHTML = "";
 
-        const genre = getGenres(genre_ids);
-        saveMovie(id, { title, poster_path, vote_average, vote_count, genre, overview, id }, undefined);
-        
         const suggestion = buildSuggestion(title, handleSearch);
         fragmentSuggestion.appendChild(suggestion);
     })
@@ -60,8 +58,9 @@ async function showSearchMovies() {
     const fragmentGroup = document.createDocumentFragment();
     const fragmentMovies = document.createDocumentFragment();
     
-    movies.results.forEach(({ title, poster_path, vote_average, genre_ids, id }) => {
+    movies.results.forEach(({ title, poster_path, vote_average, vote_count, overview, genre_ids, id }) => {
         const genre = getGenres(genre_ids);
+        saveMovie(id, { title, poster_path, vote_average, vote_count, genre, overview, id }, undefined);
         
         const movieArticle = buildMovie({ title, poster_path, vote_average, genre, id });
         fragmentMovies.appendChild(movieArticle);
@@ -76,8 +75,11 @@ async function showSearchMovies() {
     refreshListeners(showData, addList);
 }
 
-function toggleInput() {
+function toggleInput(e) {
+    e.preventDefault();
+
     $searchInput.classList.toggle("nav__search--visible");
+    $searchGroup.classList.toggle("nav__group--searchvisible");
 }
 
 function debounce(callback, delay) {
@@ -91,5 +93,5 @@ function debounce(callback, delay) {
 }
 
 $formSearch.addEventListener("submit", handleSearch);
-$searchBtn.addEventListener("click", toggleInput)
 $searchInput.addEventListener("keypress", db);
+$searchBtn.addEventListener("click", toggleInput)

@@ -51,7 +51,7 @@
                 </div>
                 <div class="nav__second">
                     <form class="nav__form" method="get">
-                        <div class="nav__group">
+                        <div class="nav__group nav__group--input">
                             <span class="nav__icon">
                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -59,20 +59,21 @@
                             </span>
                             <input class="nav__search" type="text" placeholder="Buscar películas...">
                         </div>
+                        <div class="nav__group nav__group--search"></div>
+                        <div class="nav__third">
+                            <button class="nav__button nav__button--search" title="Buscar películas...">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                            <button class="nav__button nav__button--menu" title="Abrir el menú">
+                                <svg viewBox="0 0 80 40" width="16" height="16">
+                                    <rect class="nav__rect nav__rect--top" fill="currentColor" width="90" height="10"></rect>
+                                    <rect class="nav__rect nav__rect--bottom" fill="currentColor" y="30" width="90" height="10"></rect>
+                                </svg>
+                            </button>
+                        </div>
                     </form>
-                    <div class="nav__third">
-                        <button class="nav__button nav__button--search" title="Buscar películas...">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                            </svg>
-                        </button>
-                        <button class="nav__button nav__button--menu" title="Abrir el menú">
-                            <svg viewBox="0 0 80 40" width="16" height="16">
-                                <rect class="nav__rect nav__rect--top" fill="currentColor" width="90" height="10"></rect>
-                                <rect class="nav__rect nav__rect--bottom" fill="currentColor" y="30" width="90" height="10"></rect>
-                            </svg>
-                        </button>
-                    </div>
                 </div>
             </nav>
         </div>
@@ -80,9 +81,10 @@
 
     <main class="main">
         <section class="main__movies movies">
-            <div class="movies__inner movies__inner--page">
+            <div class="movies__search movies__inner--page">
                 <div class="movies__blur"></div>
             </div>
+            <div class="movies__inner"></div>
             <div class="movies__inner movies__inner--more">
                 <div class="movies__blur"></div>
                 <button class="movies__button movies__button--more">
@@ -92,7 +94,7 @@
                     </svg>
                     Ver más
                 </button>
-                <a class="movies__button movies__button--seelist" title="Mi lista" href="./list.html">
+                <a class="movies__button movies__button--seelist" title="Mi lista" href="/pages/list.html">
                     <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"/>
                     </svg>

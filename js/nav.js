@@ -5,7 +5,9 @@ const $menuBtn = $(".nav__button--menu");
 const $menuRectTop = $(".nav__rect--top");
 const $menuRectBottom = $(".nav__rect--bottom")
 
-function toggleMenu() {
+function toggleMenu(e) {
+    e.preventDefault();
+    
     $menu.classList.toggle("nav__ul--visible");
     $body.classList.toggle("body--event");
 

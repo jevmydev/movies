@@ -21,7 +21,7 @@ let isSoundMute = true;
 
 async function searchData(dataID) {
     const saveMovieFile = getSaveMovie(dataID);
-    
+
     const movie = saveMovieFile.data || await getMovies(`/${dataID}`, 1, "es");
     const fragmentVideos = document.createDocumentFragment();
 
