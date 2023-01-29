@@ -36,6 +36,7 @@ async function searchData(dataID) {
     $description.textContent = overview;
     $video.src = srcVideo;
     $poster.src = `https://image.tmdb.org/t/p/w200/${poster_path}`;
+    $poster.alt = title;
     $data.innerHTML = `
         <span class="datamovie__info">Promedio: ${vote_average}</span>
         <span class="datamovie__info">Votos: ${vote_count}</span>

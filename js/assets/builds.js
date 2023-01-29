@@ -23,7 +23,7 @@ export function buildMovie({ title, poster_path, vote_average, genre, id }) {
 
     movieArticle.innerHTML = `
         <figure class="movie__bg">
-            <img class="movie__poster" src="https://image.tmdb.org/t/p/w200${poster_path}" loading="lazy" decoding="async">
+            <img class="movie__poster" src="https://image.tmdb.org/t/p/w200${poster_path}" alt="${title}" loading="lazy" decoding="async">
         </figure>
         <div class="movie__inner">   
             <header class="movie__header">
@@ -59,6 +59,7 @@ export function buildIframeMovie(srcVideo) {
     iframeMovie.classList.add("datamovie__morevideo");
     iframeMovie.src = srcVideo;
     iframeMovie.allowFullscreen = true;
+    iframeMovie.title = "Movies Youtube videos";
 
     return iframeMovie;
 }
