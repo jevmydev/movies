@@ -3,16 +3,26 @@
   "version": "1.0.0",
   "description": "Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies.",
   "scripts": {
-    "watch": "sass --watch scss/styles.scss css/styles.css"
+    "watch": "sass --watch scss/styles.scss css/styles.css",
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jeremy664K/Movies.git"
   },
-  "keywords": ["Movies", "Películas", "Series", "Tendencias en películas", "Reviews y votos de películas"],
+  "keywords": [
+    "Movies",
+    "Películas",
+    "Series",
+    "Tendencias en películas",
+    "Reviews y votos de películas"
+  ],
   "author": "Jeremy Díaz",
   "bugs": {
     "url": "https://github.com/Jeremy664K/Movies/issues"
   },
-  "homepage": "https://studiomovies.netlify.app/"
+  "homepage": "https://studiomovies.netlify.app/",
+  "devDependencies": {
+    "eslint": "8.33.0"
+  }
 }

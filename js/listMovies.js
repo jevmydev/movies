@@ -11,7 +11,7 @@ async function showListMovies() {
         const movie = JSON.parse(keys[key]);
         const articleMovie = buildMovie(movie);
 
-        fragmentMovies.appendChild(articleMovie)
+        fragmentMovies.appendChild(articleMovie);
     }
 
     const moviesGroup = buildGroup("Tu lista", fragmentMovies);

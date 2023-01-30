@@ -45,7 +45,7 @@ export async function getVideoMovie(path, page, language) {
     if(filterVideos.length === 0) {
         const videosEnglish = await getMovies(path, page, "en");
         const resultsEnglish = videosEnglish.results;
-        const filterVideosEnglish = resultsEnglish.filter(({ site }) => site === "YouTube") 
+        const filterVideosEnglish = resultsEnglish.filter(({ site }) => site === "YouTube"); 
 
         if(filterVideosEnglish.length === 0) return [{ key: "NakTu_VZxJ0" }];
         else return filterVideosEnglish;

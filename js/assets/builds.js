@@ -66,7 +66,7 @@ export function buildIframeMovie(srcVideo) {
 
 export function buildSuggestion(title, callback) {
     const suggestionBtn = document.createElement("button");
-    suggestionBtn.classList.add("nav__button", "nav__button--suggestion")
+    suggestionBtn.classList.add("nav__button", "nav__button--suggestion");
     suggestionBtn.title = title;
     suggestionBtn.textContent = title;
 

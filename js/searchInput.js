@@ -49,7 +49,7 @@ async function showSuggestions() {
 
         const suggestion = buildSuggestion(title, handleSearch);
         fragmentSuggestion.appendChild(suggestion);
-    })
+    });
 
     $searchGroup.appendChild(fragmentSuggestion);
 }
@@ -88,10 +88,10 @@ function debounce(callback, delay) {
         clearTimeout(timer);
         timer = setTimeout(() => {
             callback(e);
-        }, delay)
-    }
+        }, delay);
+    };
 }
 
 $formSearch.addEventListener("submit", handleSearch);
 $searchInput.addEventListener("keypress", db);
-$searchBtn.addEventListener("click", toggleInput)
+$searchBtn.addEventListener("click", toggleInput);

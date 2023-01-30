@@ -12,5 +12,5 @@ export async function addList({ currentTarget }) {
     $sign.classList.add("sign--visible");
     localStorage.setItem(dataID, JSON.stringify(movie));
 
-    setTimeout(() => $sign.classList.remove("sign--visible"), 2000)
+    setTimeout(() => $sign.classList.remove("sign--visible"), 2000);
 }

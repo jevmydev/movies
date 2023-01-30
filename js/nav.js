@@ -3,7 +3,7 @@ import { $, $body } from "./assets/selectors.js";
 const $menu = $(".nav__ul");
 const $menuBtn = $(".nav__button--menu");
 const $menuRectTop = $(".nav__rect--top");
-const $menuRectBottom = $(".nav__rect--bottom")
+const $menuRectBottom = $(".nav__rect--bottom");
 
 function toggleMenu(e) {
     e.preventDefault();

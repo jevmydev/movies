@@ -29,7 +29,7 @@ async function searchData(dataID) {
     saveMovie(dataID, undefined, videos);
 
     const videoKey = videos[0].key;
-    const srcVideo = `https://www.youtube-nocookie.com/embed/${videoKey}?controls=0&vq=auto&mute=${isSoundMute ? 1: 0}&autoplay=1&loop=1&playlist=${videoKey}`
+    const srcVideo = `https://www.youtube-nocookie.com/embed/${videoKey}?controls=0&vq=auto&mute=${isSoundMute ? 1: 0}&autoplay=1&loop=1&playlist=${videoKey}`;
     const { title, poster_path, vote_average, genre, vote_count, overview } = movie;
 
     $title.textContent = title;
@@ -41,7 +41,7 @@ async function searchData(dataID) {
         <span class="datamovie__info">Promedio: ${vote_average}</span>
         <span class="datamovie__info">Votos: ${vote_count}</span>
         <span class="datamovie__info">Géneros: ${genre}</span>
-    `
+    `;
 
     videos.forEach(({ key }, index) => {
         if(index >= maxVideos) return "";
