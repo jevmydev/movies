@@ -29,13 +29,13 @@ async function handleSearch(e) {
     toggleInput(e);
 
     const { top } = $moviesInner.getBoundingClientRect();
-    const position = (top + window.scrollY) - 130;
+    const position = top + window.scrollY - 130;
     window.scrollTo(0, position);
 }
 
 async function handleKeyPress() {
     const { value } = $searchInput;
-    if(value === "") return "";
+    if (value === "") return "";
 
     movies = await getMovies("movie", 1, "es", "search", `query=${value}&search_type=ngram`);
     showSuggestions(movies);
@@ -45,7 +45,7 @@ async function showSuggestions() {
     const fragmentSuggestion = document.createDocumentFragment();
 
     movies.results.forEach(({ title }, index) => {
-        if(index >= maxSuggestion) return $searchGroup.innerHTML = "";
+        if (index >= maxSuggestion) return ($searchGroup.innerHTML = "");
 
         const suggestion = buildSuggestion(title, handleSearch);
         fragmentSuggestion.appendChild(suggestion);
@@ -57,18 +57,18 @@ async function showSuggestions() {
 async function showSearchMovies() {
     const fragmentGroup = document.createDocumentFragment();
     const fragmentMovies = document.createDocumentFragment();
-    
+
     movies.results.forEach(({ title, poster_path, vote_average, vote_count, overview, genre_ids, id }) => {
         const genre = getGenres(genre_ids);
         saveMovie(id, { title, poster_path, vote_average, vote_count, genre, overview, id }, undefined);
-        
+
         const movieArticle = buildMovie({ title, poster_path, vote_average, genre, id });
         fragmentMovies.appendChild(movieArticle);
     });
-            
+
     const groupTitle = "Encontramos todas estas coincidencias";
     const moviesGroup = buildGroup(groupTitle, fragmentMovies);
-        
+
     fragmentGroup.appendChild(moviesGroup);
 
     await $moviesInner.appendChild(fragmentGroup);
@@ -84,7 +84,7 @@ function toggleInput(e) {
 
 function debounce(callback, delay) {
     let timer;
-    return (e) => { 
+    return (e) => {
         clearTimeout(timer);
         timer = setTimeout(() => {
             callback(e);

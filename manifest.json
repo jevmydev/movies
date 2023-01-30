@@ -5,11 +5,11 @@
     "keywords": ["Movies", "Películas", "Series", "Tendencias en películas", "Reviews y votos de películas"],
     "author": "Jeremy Díaz",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/Jeremy664K/movies"
+        "type": "git",
+        "url": "https://github.com/Jeremy664K/movies"
     },
     "bugs": {
-      "url": "https://github.com/Jeremy664K/movies/issues"
+        "url": "https://github.com/Jeremy664K/movies/issues"
     },
     "theme_color": "#fafafa",
     "background_color": "#141414",

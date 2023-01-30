@@ -2,7 +2,8 @@
     overflow: hidden;
 }
 
-.nav__ul--visible, .datamovie--visible {
+.nav__ul--visible,
+.datamovie--visible {
     top: 0;
 }
 
@@ -14,13 +15,24 @@
     html {
         scroll-behavior: auto;
     }
-    
-    .header, .nav__link, .nav__search, .nav__button, .nav__rect, .hero__button, .movie__inner, .movies__button, .footer__link, .hero__genres, .movie__genres {
+
+    .header,
+    .nav__link,
+    .nav__search,
+    .nav__button,
+    .nav__rect,
+    .hero__button,
+    .movie__inner,
+    .movies__button,
+    .footer__link,
+    .hero__genres,
+    .movie__genres {
         transition: none;
         animation: none;
     }
-    
-    .hero__genres, .movie__genres {
+
+    .hero__genres,
+    .movie__genres {
         width: auto;
     }
 }

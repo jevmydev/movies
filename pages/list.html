@@ -1,128 +1,136 @@
 <!DOCTYPE html>
 <html lang="es" scheme="darkMode">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies | Las tendencias de películas a tu alcance</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="canonical" href="https://studiomovies.netlify.app/">
-    <script src="/js/listMovies.js" type="module"></script>
-    <script src="/js/scrolling.js" type="module"></script>
-    <script src="/js/nav.js" type="module"></script>
-    <meta name="application-name" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies.">
-    <meta name="theme-color" content="#fafafa">
-    <meta name="author" content="Jeremy Díaz">
-    <meta name="description" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies.">
-    <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="Movies | Las películas a tu alcance">
-    <meta property="og:image" content="/favicon.ico">
-    <meta property="og:description" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies.">
-    <meta property="og:url" content="https://studiomovies.netlify.app"/>
-    <meta property="og:site_name" content="studiomovies.netlify.app">
-    <meta property="og:type" content="website">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movies | Las tendencias de películas a tu alcance</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="canonical" href="https://studiomovies.netlify.app/" />
+        <script src="/js/listMovies.js" type="module"></script>
+        <script src="/js/scrolling.js" type="module"></script>
+        <script src="/js/nav.js" type="module"></script>
+        <meta name="application-name" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies." />
+        <meta name="theme-color" content="#fafafa" />
+        <meta name="author" content="Jeremy Díaz" />
+        <meta name="description" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies." />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:title" content="Movies | Las películas a tu alcance" />
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:description" content="Añade tus películas favoritas a tu lista y disfruta de las nuevas tendencias con toda su información en Movies." />
+        <meta property="og:url" content="https://studiomovies.netlify.app" />
+        <meta property="og:site_name" content="studiomovies.netlify.app" />
+        <meta property="og:type" content="website" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__inner">
+                <nav class="header__nav nav">
+                    <div class="nav__first">
+                        <a class="nav__movies" title="Logo de Movies" href="/">
+                            <figure class="nav__figure">
+                                <img class="nav__logo" alt="Logo de Movies" src="/images/logo.webp" decoding="async" />
+                            </figure>
+                        </a>
+                        <ul class="nav__ul">
+                            <li class="nav__li">
+                                <a class="nav__link" title="Inicio" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav__li">
+                                <a class="nav__link" title="Películas" href="./movies.html">Películas</a>
+                            </li>
+                            <li class="nav__li">
+                                <a class="nav__link nav__link--active" title="Mi lista" href="#top">Mi lista</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav__second">
+                        <div class="nav__third">
+                            <button class="nav__button nav__button--menu" title="Abrir el menú">
+                                <svg viewBox="0 0 80 40" width="16" height="16">
+                                    <rect class="nav__rect nav__rect--top" fill="currentColor" width="90" height="10"></rect>
+                                    <rect class="nav__rect nav__rect--bottom" fill="currentColor" y="30" width="90" height="10"></rect>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-    <header class="header">
-        <div class="header__inner">
-            <nav class="header__nav nav">
-                <div class="nav__first">
-                    <a class="nav__movies" title="Logo de Movies" href="/">
-                        <figure class="nav__figure">
-                            <img class="nav__logo" alt="Logo de Movies" src="/images/logo.webp" decoding="async">
+        <main class="main">
+            <section class="main__movies movies">
+                <div class="movies__inner movies__inner--page movies__inner--list">
+                    <div class="movies__blur"></div>
+                </div>
+                <div class="movies__inner">
+                    <div class="movies__blur"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__first">
+                    <a class="footer__movies" title="Logo de Movies" href="/">
+                        <figure class="footer__figure">
+                            <img class="footer__logo" alt="Logo de Movies" src="/images/logo.webp" loading="lazy" decoding="async" />
                         </figure>
                     </a>
-                    <ul class="nav__ul">
-                        <li class="nav__li">
-                            <a class="nav__link" title="Inicio" href="../index.html">Inicio</a>
+                </div>
+                <div class="footer__second">
+                    <ul class="footer__ul">
+                        <li>
+                            <a class="footer__link" title="Inicio" href="../index.html">Inicio</a>
                         </li>
-                        <li class="nav__li">
-                            <a class="nav__link" title="Películas" href="./movies.html">Películas</a>
+                        <li>
+                            <a class="footer__link" title="Películas" href="./movies.html">Películas</a>
                         </li>
-                        <li class="nav__li">
-                            <a class="nav__link nav__link--active" title="Mi lista" href="#top">Mi lista</a>
+                        <li>
+                            <a class="footer__link footer__link--active" title="Mi lista" href="#top">Mi lista</a>
                         </li>
                     </ul>
                 </div>
-                <div class="nav__second">
-                    <div class="nav__third">
-                        <button class="nav__button nav__button--menu" title="Abrir el menú">
-                            <svg viewBox="0 0 80 40" width="16" height="16">
-                                <rect class="nav__rect nav__rect--top" fill="currentColor" width="90" height="10"></rect>
-                                <rect class="nav__rect nav__rect--bottom" fill="currentColor" y="30" width="90" height="10"></rect>
-                            </svg>
-                        </button>
-                    </div>
+                <div class="footer__third">
+                    <ul class="footer__ul">
+                        <li>
+                            <a class="footer__link" title="Ir a mi GitHub" href="https://github.com/Jeremy664K" target="_blank" rel="noreferrer noopener">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" title="Ir a mi LinkedIn" href="https://www.linkedin.com/in/jeremy-d%C3%ADaz-50b594233/" target="_blank" rel="noreferrer noopener">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 30 30">
+                                    <path
+                                        d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer__link" href="https://twitter.com/Jeremy664K" title="Ir a mi Twitter" target="_blank" rel="noreferrer noopener">
+                                <svg height="24" width="24" fill="currentColor" viewBox="0 0 56 56">
+                                    <path
+                                        d="M52.837,15.065c-1.811,0.805-3.76,1.348-5.805,1.591c2.088-1.25,3.689-3.23,4.444-5.592c-1.953,1.159-4.115,2-6.418,2.454  c-1.843-1.964-4.47-3.192-7.377-3.192c-5.581,0-10.106,4.525-10.106,10.107c0,0.791,0.089,1.562,0.262,2.303  c-8.4-0.422-15.848-4.445-20.833-10.56c-0.87,1.492-1.368,3.228-1.368,5.082c0,3.506,1.784,6.6,4.496,8.412  c-1.656-0.053-3.215-0.508-4.578-1.265c-0.001,0.042-0.001,0.085-0.001,0.128c0,4.896,3.484,8.98,8.108,9.91  c-0.848,0.23-1.741,0.354-2.663,0.354c-0.652,0-1.285-0.063-1.902-0.182c1.287,4.015,5.019,6.938,9.441,7.019  c-3.459,2.711-7.816,4.327-12.552,4.327c-0.815,0-1.62-0.048-2.411-0.142c4.474,2.869,9.786,4.541,15.493,4.541  c18.591,0,28.756-15.4,28.756-28.756c0-0.438-0.009-0.875-0.028-1.309C49.769,18.873,51.483,17.092,52.837,15.065z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        <section class="main__movies movies">
-            <div class="movies__inner movies__inner--page movies__inner--list">
-                <div class="movies__blur"></div>
             </div>
-            <div class="movies__inner">
-                <div class="movies__blur"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__first">
-                <a class="footer__movies" title="Logo de Movies" href="/">
-                    <figure class="footer__figure">
-                        <img class="footer__logo" alt="Logo de Movies" src="/images/logo.webp" loading="lazy" decoding="async">
-                    </figure>
+            <div class="footer__inner footer__inner--bottom">
+                <a class="footer__link" title="Ir a mi Portfolio" href="https://jeremydiaz.netlify.app/" target="_blank" rel="noreferrer noopener"> Creado por Jeremy Díaz </a>
+                <a class="footer__link" title="Ir al inicio" href="#top">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"></path>
+                    </svg>
                 </a>
             </div>
-            <div class="footer__second">
-                <ul class="footer__ul">
-                    <li>
-                        <a class="footer__link" title="Inicio" href="../index.html">Inicio</a>
-                    </li>
-                    <li>
-                        <a class="footer__link" title="Películas" href="./movies.html">Películas</a>
-                    </li>
-                    <li>
-                        <a class="footer__link footer__link--active" title="Mi lista" href="#top">Mi lista</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer__third">
-                <ul class="footer__ul">
-                     <li>
-                         <a class="footer__link" title="Ir a mi GitHub" href="https://github.com/Jeremy664K" target="_blank" rel="noreferrer noopener">
-                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
-                         </a>
-                     </li>
-                     <li>
-                         <a class="footer__link" title="Ir a mi LinkedIn" href="https://www.linkedin.com/in/jeremy-d%C3%ADaz-50b594233/" target="_blank" rel="noreferrer noopener">
-                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 30 30"><path d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"></path></svg>
-                         </a>
-                     </li>
-                     <li>
-                         <a class="footer__link" href="https://twitter.com/Jeremy664K" title="Ir a mi Twitter" target="_blank" rel="noreferrer noopener">
-                             <svg height="24" width="24" fill="currentColor" viewBox="0 0 56 56"><path d="M52.837,15.065c-1.811,0.805-3.76,1.348-5.805,1.591c2.088-1.25,3.689-3.23,4.444-5.592c-1.953,1.159-4.115,2-6.418,2.454  c-1.843-1.964-4.47-3.192-7.377-3.192c-5.581,0-10.106,4.525-10.106,10.107c0,0.791,0.089,1.562,0.262,2.303  c-8.4-0.422-15.848-4.445-20.833-10.56c-0.87,1.492-1.368,3.228-1.368,5.082c0,3.506,1.784,6.6,4.496,8.412  c-1.656-0.053-3.215-0.508-4.578-1.265c-0.001,0.042-0.001,0.085-0.001,0.128c0,4.896,3.484,8.98,8.108,9.91  c-0.848,0.23-1.741,0.354-2.663,0.354c-0.652,0-1.285-0.063-1.902-0.182c1.287,4.015,5.019,6.938,9.441,7.019  c-3.459,2.711-7.816,4.327-12.552,4.327c-0.815,0-1.62-0.048-2.411-0.142c4.474,2.869,9.786,4.541,15.493,4.541  c18.591,0,28.756-15.4,28.756-28.756c0-0.438-0.009-0.875-0.028-1.309C49.769,18.873,51.483,17.092,52.837,15.065z"></path></svg>
-                         </a>
-                     </li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer__inner footer__inner--bottom">
-            <a class="footer__link" title="Ir a mi Portfolio" href="https://jeremydiaz.netlify.app/" target="_blank" rel="noreferrer noopener">
-                Creado por Jeremy Díaz
-            </a>
-            <a class="footer__link" title="Ir al inicio" href="#top">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"></path>
-                </svg>
-            </a>
-        </div>
-    </footer>
-
-</body>
+        </footer>
+    </body>
 </html>

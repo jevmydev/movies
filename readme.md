@@ -3,7 +3,7 @@
 Añade tus **películas favoritas** a tu lista y disfruta de las **nuevas tendencias** con toda su información en **Movies**.
 
 👉 Enlace: [https://studiomovies.netlify.app/](https://studiomovies.netlify.app/)  
-📢 Utilizando la API de: [themoviedb.org](https://developers.themoviedb.org/3/getting-started/introduction)  
+📢 Utilizando la API de: [themoviedb.org](https://developers.themoviedb.org/3/getting-started/introduction)
 
 <p align="left">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="Icono de HTML">

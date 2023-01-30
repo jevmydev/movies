@@ -7,7 +7,7 @@ async function showListMovies() {
     const fragmentMovies = document.createDocumentFragment();
     let keys = { ...localStorage };
 
-    for(const key in keys) {
+    for (const key in keys) {
         const movie = JSON.parse(keys[key]);
         const articleMovie = buildMovie(movie);
 
@@ -16,7 +16,7 @@ async function showListMovies() {
 
     const moviesGroup = buildGroup("Tu lista", fragmentMovies);
     $moviesInner.appendChild(moviesGroup);
-    $$(".movie__header").forEach(header => header.style.display = "none");
+    $$(".movie__header").forEach((header) => (header.style.display = "none"));
 }
 
 showListMovies();

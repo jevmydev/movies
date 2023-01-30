@@ -7,7 +7,7 @@ export async function addList({ currentTarget }) {
     const dataID = currentTarget.getAttribute("data-id");
     const saveMovieFile = getSaveMovie(dataID);
 
-    const movie = saveMovieFile.data || await getMovies(`/${dataID}`, 1, "es");
+    const movie = saveMovieFile.data || (await getMovies(`/${dataID}`, 1, "es"));
 
     $sign.classList.add("sign--visible");
     localStorage.setItem(dataID, JSON.stringify(movie));

@@ -47,7 +47,8 @@
         }
     }
 
-    &__avg, &__count {
+    &__avg,
+    &__count {
         @include tools.flex($gap: var.$space-x-small);
     }
 

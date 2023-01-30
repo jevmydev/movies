@@ -75,6 +75,6 @@ export function buildSuggestion(title, callback) {
 }
 
 export function refreshListeners(callBackInformation, callbackList) {
-    $$(".movie__button--information").forEach(informationMovie => informationMovie.addEventListener("click", callBackInformation));
-    $$(".movie__button--list").forEach(informationMovie => informationMovie.addEventListener("click", callbackList));
+    $$(".movie__button--information").forEach((informationMovie) => informationMovie.addEventListener("click", callBackInformation));
+    $$(".movie__button--list").forEach((informationMovie) => informationMovie.addEventListener("click", callbackList));
 }

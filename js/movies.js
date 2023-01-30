@@ -5,32 +5,32 @@ import { addList } from "./assets/addList.js";
 import { $ } from "./assets/selectors.js";
 
 let maxPages = 5;
-let page = 1; 
+let page = 1;
 
 export let movies = await getMovies("popular", page, "es");
 
 const $moviesInner = $(".movies__inner");
-const $seeMoreBtn = $(".movies__button--more"); 
+const $seeMoreBtn = $(".movies__button--more");
 
 async function showMovies() {
     const fragmentGroup = document.createDocumentFragment();
 
-    for(page; page <= maxPages; page++) {
-        if(page > 1) movies = await getMovies("popular", page, "es");
+    for (page; page <= maxPages; page++) {
+        if (page > 1) movies = await getMovies("popular", page, "es");
         const fragmentMovies = document.createDocumentFragment();
 
         movies.results.forEach(({ title, poster_path, vote_average, vote_count, genre_ids, overview, id }) => {
             const genre = getGenres(genre_ids);
             saveMovie(id, { title, poster_path, vote_average, vote_count, genre, overview, id }, undefined);
-    
+
             const movieArticle = buildMovie({ title, poster_path, vote_average, genre, id });
             fragmentMovies.appendChild(movieArticle);
         });
-        
+
         const randomTitle = Math.floor(Math.random() * titlesGroup.length);
         const groupTitle = titlesGroup[randomTitle];
         const moviesGroup = buildGroup(groupTitle, fragmentMovies);
-    
+
         fragmentGroup.appendChild(moviesGroup);
     }
 
@@ -44,7 +44,7 @@ async function seeMore() {
     const lastChild = $moviesInner.lastChild;
 
     const { top } = lastChild.getBoundingClientRect();
-    const position = (top + window.scrollY) - 130;
+    const position = top + window.scrollY - 130;
 
     window.scrollTo(0, position);
 }

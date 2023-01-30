@@ -16,7 +16,7 @@
     &__inner {
         @include tools.center($mw: var.$mw-document-secondary);
         padding: var.$space-small;
-        margin: var.$space-long var.$space-small; 
+        margin: var.$space-long var.$space-small;
         border-radius: var.$radius-primary;
         background-color: var.$bg-primary;
         position: relative;
@@ -36,7 +36,9 @@
         flex-wrap: wrap;
     }
 
-    &__section, &__aside, &__videos {
+    &__section,
+    &__aside,
+    &__videos {
         max-width: var.$mw-text;
         @include tools.flex($direction: column, $gap: var.$space-small, $align: flex-start, $justify: flex-start);
     }
@@ -66,11 +68,12 @@
         min-height: var.$mh-element;
     }
 
-    &__close, &__left {
+    &__close,
+    &__left {
         position: absolute;
         z-index: 2;
         top: 0;
-        right: 0
+        right: 0;
     }
 
     &__left {
@@ -86,7 +89,8 @@
         }
     }
 
-    &__video, &__morevideo {
+    &__video,
+    &__morevideo {
         position: relative;
         z-index: -1;
         user-select: none;
@@ -127,7 +131,9 @@
             position: static;
         }
 
-        &__aside, &__videos, &__video {
+        &__aside,
+        &__videos,
+        &__video {
             z-index: 1;
             width: 100%;
             max-width: none;

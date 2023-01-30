@@ -30,7 +30,9 @@
         z-index: 3;
     }
 
-    &__first, &__ul, &__third {
+    &__first,
+    &__ul,
+    &__third {
         @include tools.flex($justify: space-between, $gap: var.$space-x-small);
         list-style: none;
     }
@@ -81,7 +83,8 @@
     &__button {
         @extend %button;
 
-        &--search, &--menu {
+        &--search,
+        &--menu {
             display: none;
             z-index: 3;
         }
@@ -96,7 +99,9 @@
     }
 
     @media only screen and (max-width: 800px) {
-        &__icon, &__search, .nav__group--search {
+        &__icon,
+        &__search,
+        .nav__group--search {
             display: none;
         }
 
@@ -109,7 +114,8 @@
             gap: var.$space-x-small;
         }
 
-        &__group--input, &__group--search {
+        &__group--input,
+        &__group--search {
             position: absolute;
             top: 3.6rem;
             left: -9.6rem;
@@ -143,7 +149,8 @@
             padding: var.$space-small;
         }
 
-        &__li, &__link {
+        &__li,
+        &__link {
             display: block;
             width: 100%;
         }
@@ -160,16 +167,17 @@
         &__rect {
             transition: transform 0.12s;
         }
-    
+
         &__rect--topchange {
-            transform: translate(15px, -10px) rotate(45deg);    
+            transform: translate(15px, -10px) rotate(45deg);
         }
-    
+
         &__rect--bottomchange {
             transform: translate(-15px, 30px) rotate(-45deg);
         }
 
-        &__group--input, &__group--search {
+        &__group--input,
+        &__group--search {
             left: -5.8rem;
         }
     }

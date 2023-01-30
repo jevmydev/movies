@@ -22,14 +22,14 @@ let isSoundMute = true;
 async function searchData(dataID) {
     const saveMovieFile = getSaveMovie(dataID);
 
-    const movie = saveMovieFile.data || await getMovies(`/${dataID}`, 1, "es");
+    const movie = saveMovieFile.data || (await getMovies(`/${dataID}`, 1, "es"));
     const fragmentVideos = document.createDocumentFragment();
 
-    const videos = saveMovieFile.videos || await getVideoMovie(`/${dataID}/videos`, 1, "es");
+    const videos = saveMovieFile.videos || (await getVideoMovie(`/${dataID}/videos`, 1, "es"));
     saveMovie(dataID, undefined, videos);
 
     const videoKey = videos[0].key;
-    const srcVideo = `https://www.youtube-nocookie.com/embed/${videoKey}?controls=0&vq=auto&mute=${isSoundMute ? 1: 0}&autoplay=1&loop=1&playlist=${videoKey}`;
+    const srcVideo = `https://www.youtube-nocookie.com/embed/${videoKey}?controls=0&vq=auto&mute=${isSoundMute ? 1 : 0}&autoplay=1&loop=1&playlist=${videoKey}`;
     const { title, poster_path, vote_average, genre, vote_count, overview } = movie;
 
     $title.textContent = title;
@@ -44,14 +44,14 @@ async function searchData(dataID) {
     `;
 
     videos.forEach(({ key }, index) => {
-        if(index >= maxVideos) return "";
+        if (index >= maxVideos) return "";
 
         const srcVideo = `https://www.youtube-nocookie.com/embed/${key}?controls=1&mute=0&vq=auto&autoplay=0`;
         const iframe = buildIframeMovie(srcVideo);
 
         fragmentVideos.appendChild(iframe);
     });
-    
+
     $listBtn.setAttribute("data-id", dataID);
     $listBtn.addEventListener("click", addList);
     $datamovieVideos.appendChild(fragmentVideos);
