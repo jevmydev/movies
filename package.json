@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jevmydev/Movies.git"
+        "url": "git+https://github.com/jevmydev/movies.git"
     },
     "keywords": [
         "Movies",
@@ -19,7 +19,7 @@
     ],
     "author": "Jeremy Díaz",
     "bugs": {
-        "url": "https://github.com/jevmydev/Movies/issues"
+        "url": "https://github.com/jevmydev/movies/issues"
     },
     "homepage": "https://studiomovies.netlify.app/",
     "devDependencies": {
