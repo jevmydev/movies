@@ -31,7 +31,7 @@ let isSoundMute = true;
 let videoKey = "";
 
 async function showHeroMovie() {
-    const heroVideo = await getVideoMovie(`/${id}/videos`, 1, "es");
+    const heroVideo = await getVideoMovie(`${id}/videos`, 1, "es");
     saveMovie(id, undefined, heroVideo);
     videoKey = heroVideo[0].key;
 

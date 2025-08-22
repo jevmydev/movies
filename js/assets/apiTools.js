@@ -28,7 +28,7 @@ export const genres = {
     37: "Western"
 };
 
-export async function getMovies(path, page, language, rute = "movie", additional = "") {
+export async function getMovies(path, page, language, rute = "movie", additional = "include_adult=false") {
     const search = `${URL}${rute}/${path}?api_key=${TOKEN}&page=${page}&language=${language}&${additional}`;
 
     const response = await fetch(search);

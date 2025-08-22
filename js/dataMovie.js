@@ -25,7 +25,7 @@ async function searchData(dataID) {
     const movie = saveMovieFile.data || (await getMovies(`/${dataID}`, 1, "es"));
     const fragmentVideos = document.createDocumentFragment();
 
-    const videos = saveMovieFile.videos || (await getVideoMovie(`/${dataID}/videos`, 1, "es"));
+    const videos = saveMovieFile.videos || (await getVideoMovie(`${dataID}/videos`, 1, "es"));
     saveMovie(dataID, undefined, videos);
 
     const videoKey = videos[0].key;
